@@ -125,7 +125,7 @@ Copyright © 2018 <a href=http://www.sparospace.com/ target=_blank>Sparospace</a
 <div class=container-fluid>
 <div class=row>
 <ul class=video-list>
-<li v-for="(item, index) in data.en.portfolio_data" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 video-item">
+<li v-for="(item, index) in portfolioData.slice().reverse()" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 video-item">
 <a @click.prevent=$root.activeLightbox(item.videoID) :href=item.href target=_blank>
 <div class=bg-wrap :style="'background-image: url(https://img.youtube.com/vi/'+ item.videoID +'/hqdefault.jpg)'">
 <div class=content-wrap>
@@ -238,6 +238,12 @@ Copyright © 2018 <a href=http://www.sparospace.com/ target=_blank>Sparospace</a
 <h3>louie360@gmail.com</h3>
 </section>
 </template>
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js"></script>
+<script>
+var config = {apiKey: "AIzaSyAJHHXxAk81-upIpCdUgFRCEbKbSAFuRkQ",authDomain: "chrisgaga-249f0.firebaseapp.com",databaseURL: "https://chrisgaga-249f0.firebaseio.com",projectId: "chrisgaga-249f0",storageBucket: "chrisgaga-249f0.appspot.com",messagingSenderId: "900763560184"};firebase.initializeApp(config);var db = firebase.firestore();
+</script>
 <script src=https://www.youtube.com/iframe_api></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.js></script>
 <script src=js/jquery-1.10.2.min.js></script>
@@ -248,6 +254,6 @@ Copyright © 2018 <a href=http://www.sparospace.com/ target=_blank>Sparospace</a
 <script src=js/jquery.lightbox_me.js></script>
 <script src=js/vue.min.js></script>
 <script src=js/vue-router.js></script>
-<script src=js/main.min.js?20180622></script>
+<script src=js/main.min.js?20180718></script>
 </body>
 </html>
